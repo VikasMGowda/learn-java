@@ -10,7 +10,7 @@ public class Keycount
             count++;
             }
         } 
-         return  count;
+        return  count;
     }
     public static void main(String[] args) {
         System.out.println("dispaly key count : " + keycount(20,10,20,20,40,50));
