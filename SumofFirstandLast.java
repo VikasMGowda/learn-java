@@ -1,4 +1,4 @@
-public class SumofFirstandLast 
+public class SumofFirstandLast
 {
     public static int sumFirstAndLast(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -10,6 +10,6 @@ public class SumofFirstandLast
 
     public static void main(String[] args) {
         int[] input = {8, 3, 9, -8};
-        System.out.println(sumFirstAndLast(input)); 
+        System.out.println(sumFirstAndLast(input));
     }
 }

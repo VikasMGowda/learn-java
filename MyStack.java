@@ -1,24 +1,25 @@
-public class MyStack {
+public class MyStack
+{
 
-    private int[] stack;
+    public int[] value;
     private int top = -1;
     private int stackMaxSize = 0;
 
     public MyStack(int size)
     {
-        this.stack = new int[size];
+        this.value = new int[size];
         stackMaxSize = size;
     }
     
     public void push(int data)
     {
-        if (this.top == this.stackMaxSize-1) 
+        if (this.top == this.stackMaxSize-1)
         {
             System.out.println("Push failed! Stack is full");
             return;
         }
         this.top++;
-        this.stack[top] = data;
+        this.value[top] = data;
 
     }
 
@@ -30,9 +31,9 @@ public class MyStack {
             return -1;
         }
         
-        int value = this.stack[top];
+        int data = this.value[top];
         this.top--;
-        return value;
+        return data;
 
     }
 
@@ -44,7 +45,7 @@ public class MyStack {
             return -1;
         }
 
-        return this.stack[this.top];
+        return this.value[this.top];
     }
 
     public void print()
@@ -57,7 +58,24 @@ public class MyStack {
 
         for (int i = this.top; i >=0; i--)
         {
-            System.out.println(" [ " + i + " ]  --> " + this.stack[i]);
+            System.out.println(" [ " + i + " ]  --> " + this.value[i]);
         }
     }
+public static void main(String[] args) {
+
+    MyStack stack = new MyStack(5);
+
+    stack.push(5);
+    stack.push(10);
+    stack.push(15);
+    stack.push(20);
+
+    stack.print();
+
+    System.out.println(stack.peek());
+
+    System.out.println(stack.pop());
+
+    stack.print();
+}
 }
