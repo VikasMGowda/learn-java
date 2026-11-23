@@ -61,7 +61,7 @@ public class RegularMetaChars
         System.out.println("A".matches("\\W"));
         System.out.println("9".matches("\\W"));
         System.out.println("@".matches("\\W"));
-        System.out.println("_".matches("\\w"));
+        System.out.println("_".matches("\\W"));
 
     }
 

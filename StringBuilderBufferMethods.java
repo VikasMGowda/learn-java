@@ -101,8 +101,8 @@ public class StringBuilderBufferMethods
     public static void demoSubStr()
     {
         StringBuilder sb = new StringBuilder("Javaprogram");
-        sb.substring(2, 6);
-        System.out.println(sb);
+        //sb.substring(2, 6);
+        System.out.println("substring -->" +sb.substring(2, 6));
     }
 
     //tostring()

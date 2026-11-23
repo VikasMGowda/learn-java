@@ -1,32 +1,103 @@
 public class Stack
 {
-    private int top = -1;
-    private int size = 0;
-    public  int value[];
 
-    public void stack(int sizeofStack)
-    {
-        this.value = new int[sizeofStack];
-        this.size = sizeofStack;
-    }
+    int size;
+    int top;
+    int [] stack;
 
-    public void push(int value)
+    Stack(int size)
     {
-        this.top++;
-        this.value[this.top] = value;
-    }
-
-    public int peek()
-    {
-        return this.value[this.top];
+        this.size = size;  // current size or current top
+        top = -1;
+        stack = new int[size]; // Array created
 
     }
 
-    public int pop()
+    //isEmpty()
+    boolean isEmpty()
     {
-        int index= this.top;
-        this.top--;
-        return this.value[index];
+        return  top == -1;
+    }
+
+    //isFull()
+    boolean isFull()
+    {
+        return  top == size -1;
+    }
+
+
+    //push()
+    void push(int value)
+    {
+        if(isFull())
+        {
+            System.out.println("Stack overflow");
+            return;
+        }
+
+        top++;
+        stack[top] = value;
+
+        System.out.println(value+"Inserted into stack");
+        
+    }
+
+
+    //pop()
+    int pop()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is empty");
+            return  -1;
+        }
+
+        int value = stack[top];
+        top--;
+        return value;
 
     }
+
+    //stackTop
+    int stackTop()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+        return stack[top];
+
+    }
+
+    //peek()
+    int peek(int position)
+    {
+        int index = top - position + 1;
+
+        if(index < 0 || index > top)
+        {
+            System.out.println("Invalid position");
+            return -1;
+        }
+        return stack[index];
+    }
+
+    //display()
+    void display()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is empty");
+            return;
+        }
+
+    System.out.println("\nStack Elements");
+
+        for(int i = top; i >= 0; i--)
+        {
+            System.out.println(stack[i]);
+        }
+    }
+
 }
